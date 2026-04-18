@@ -1,10 +1,10 @@
-# 🌊 create-sasswave-app
+# 🌊 @sasswave/create-sasswave-app
 
 > Zero-config CLI to scaffold **SCSS-first** React, Next.js, or Remix apps — ready to build in seconds.
 
-[![npm version](https://img.shields.io/npm/v/create-sasswave-app)](https://www.npmjs.com/package/create-sasswave-app)
+[![npm version](https://img.shields.io/npm/v/@sasswave/create-sasswave-app)](https://www.npmjs.com/package/@sasswave/create-sasswave-app)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
-[![License](https://img.shields.io/npm/l/create-sasswave-app)](https://github.com/shiv-am-saxena/Sasswave-CLI)
+[![License](https://img.shields.io/npm/l/@sasswave/create-sasswave-app)](https://github.com/SassWave/create-sasswave-app)
 
 ---
 
@@ -13,19 +13,19 @@
 ### Create a new app
 
 ```bash
-npm create sasswave-app
+npm create @sasswave/sasswave-app
 ```
 
 ### Or with npx
 
 ```bash
-npx create-sasswave-app
+npx @sasswave/create-sasswave-app
 ```
 
 ### Pass the app name directly
 
 ```bash
-npx create-sasswave-app my-app
+npx @sasswave/create-sasswave-app my-app
 ```
 
 The CLI will walk you through framework selection, scaffold your project, install Sass, apply SassWave-branded layouts, and download required assets — all in one command.
@@ -93,9 +93,9 @@ my-app/
 
 | Command | Description |
 |---------|-------------|
-| `npm create sasswave-app` | Launch the CLI (npm create convention) |
-| `npx create-sasswave-app` | Launch the CLI (npx) |
-| `npx create-sasswave-app my-app` | Skip the app name prompt |
+| `npm create @sasswave/sasswave-app` | Launch the CLI (npm create convention) |
+| `npx @sasswave/create-sasswave-app` | Launch the CLI (npx) |
+| `npx @sasswave/create-sasswave-app my-app` | Skip the app name prompt |
 
 ### After scaffolding
 
