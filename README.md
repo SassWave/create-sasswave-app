@@ -160,8 +160,8 @@ Releases are automated with [semantic-release](https://github.com/semantic-relea
 
 - [SassWave Components](https://sasswave.in/components/)
 - [SassWave Documentation](https://sasswave.in/docs/)
-- [GitHub Repository](https://github.com/shiv-am-saxena/Sasswave-CLI)
-- [Report Issues](https://github.com/shiv-am-saxena/Sasswave-CLI/issues)
+- [GitHub Repository](https://github.com/SassWave/create-sasswave-app)
+- [Report Issues](https://github.com/SassWave/create-sasswave-app/issues)
 
 ---
 
