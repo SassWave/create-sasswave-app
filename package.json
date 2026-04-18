@@ -1,0 +1,64 @@
+{
+  "name": "create-sasswave-app",
+  "version": "0.1.1",
+  "description": "Zero-config CLI to scaffold SassWave-ready React or Next.js apps. Run with: npm create sasswave-app",
+  "private": false,
+  "type": "module",
+  "license": "UNLICENSED",
+  "bin": {
+    "create-sasswave-app": "./bin/sasswave-create.js",
+    "sasswave": "./bin/sasswave-create.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "assets-manifest.json",
+    "docs",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "node bin/sasswave-create.js",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "semantic-release": "semantic-release"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "keywords": [
+    "create-sasswave-app",
+    "sass",
+    "nextjs",
+    "react",
+    "vite",
+    "cli",
+    "scaffolding"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiv-am-saxena/Sasswave-CLI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shiv-am-saxena/Sasswave-CLI/issues"
+  },
+  "homepage": "https://github.com/shiv-am-saxena/Sasswave-CLI#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "enquirer": "^2.4.1",
+    "execa": "^9.6.0",
+    "fs-extra": "^11.3.2"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "nock": "^13.5.4",
+    "semantic-release": "^24.2.3",
+    "supertest": "^7.0.0"
+  }
+}

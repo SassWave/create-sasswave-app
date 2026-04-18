@@ -1,0 +1,47 @@
+# Dependencies
+/node_modules/
+/bun.lockb
+
+# Bun runtime cache
+/.bun/
+/tests/
+# Package manager artifacts
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Build artifacts
+/dist/
+/out/
+.next/
+.turbo/
+.vercel/
+
+# Coverage / reports
+coverage/
+lcov.info
+*.lcov
+
+# Temporary data
+/tmp/
+.cache/
+*.tmp
+
+# Environment / lock-in
+.env*
+*.local
+
+# Misc
