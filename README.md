@@ -1,29 +1,170 @@
-# SassWave Create CLI
+# 🌊 create-sasswave-app
 
-`sasswave-create` is a zero-config scaffolding tool that spins up SassWave-branded React or Next.js apps. It installs Sass, rewrites key entry files with curated layouts, downloads optional assets, and can even drop in a Three.js scene when requested.
+> Zero-config CLI to scaffold **SCSS-first** React, Next.js, or Remix apps — ready to build in seconds.
 
-## What You Get
+[![npm version](https://img.shields.io/npm/v/create-sasswave-app)](https://www.npmjs.com/package/create-sasswave-app)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
+[![License](https://img.shields.io/npm/l/create-sasswave-app)](https://github.com/shiv-am-saxena/Sasswave-CLI)
 
-- Guided prompts for app name, framework (React via Vite or Next.js), language, package manager, Git init, and optional 3D setup.
-- Vite React projects: deletes default CSS, rewrites `App.(t|j)sx`, `App.module.scss`, `main.(t|j)sx`, `styles.scss`, and `index.html` with SassWave-ready markup + branding.
-- Next.js projects: runs `create-next-app` with the right flags, removes Tailwind/PostCSS boilerplate, and rebuilds `layout.*`, `page.*`, `globals.scss`, and `page.module.scss` using SassWave defaults.
-- Asset manifest integration: ship favicons, fonts, and hero artwork by editing `assets-manifest.json`.
-- Optional React 3D mode that installs `three`, `@react-three/fiber`, `@react-three/drei`, and drops in a starter `ThreeScene`.
-- Automatic `npm run dev` / `bun dev` launch when scaffolding finishes.
+---
 
-## Install & Run
+## 🚀 Usage
 
-### Via npm (recommended)
+### Create a new app
 
 ```bash
-npm install -g sasswave
-sasswave-create
+npm create sasswave-app
 ```
 
-### One-off (npx)
+### Or with npx
 
 ```bash
-npx sasswave-create
+npx create-sasswave-app
 ```
 
-Follow the prompts and the CLI will scaffold the requested stack inside the folder you provide.
+### Pass the app name directly
+
+```bash
+npx create-sasswave-app my-app
+```
+
+The CLI will walk you through framework selection, scaffold your project, install Sass, apply SassWave-branded layouts, and download required assets — all in one command.
+
+---
+
+## 📦 What Gets Scaffolded
+
+When you run the CLI, you'll be prompted to choose a framework:
+
+| Option | What runs under the hood |
+|--------|--------------------------|
+| **Next.js** | `npx create-next-app@latest` (App Router + TypeScript + ESLint) |
+| **React** | `npm create vite@latest` (react-ts template) |
+| **Remix** | `npx create-remix@latest` |
+
+After scaffolding, the CLI automatically:
+
+1. **Installs Sass** as a dev dependency
+2. **Removes boilerplate** (Tailwind configs, default CSS files, placeholder SVGs)
+3. **Writes SassWave-ready SCSS** — global resets, variables, mixins, and module styles
+4. **Generates branded components** — `layout`, `page`, `App` files with SassWave markup
+5. **Downloads assets** — favicon, wordmark, and Urbanist font from the cloud
+
+---
+
+## 🎨 What Your Project Looks Like
+
+### Next.js
+
+```
+my-app/
+├── src/app/
+│   ├── globals.scss          # Global styles, variables, mixins
+│   ├── page.module.scss      # Page-level scoped styles
+│   ├── layout.tsx            # SassWave-branded root layout
+│   ├── page.tsx              # Landing page with hero section
+│   └── favicon.ico           # SassWave favicon
+├── public/
+│   ├── wordmark.png          # SassWave logo
+│   └── Urbanist-Regular.woff # Custom font
+└── package.json
+```
+
+### React (Vite)
+
+```
+my-app/
+├── src/
+│   ├── App.tsx               # SassWave landing page
+│   ├── App.module.scss       # Scoped component styles
+│   ├── main.tsx              # Entry point with global SCSS
+│   └── styles.scss           # Global styles, variables, mixins
+├── public/
+│   ├── favicon.png           # SassWave favicon
+│   ├── wordmark.png          # SassWave logo
+│   └── Urbanist-Regular.woff # Custom font
+├── index.html
+└── package.json
+```
+
+---
+
+## ⚙️ Commands Reference
+
+| Command | Description |
+|---------|-------------|
+| `npm create sasswave-app` | Launch the CLI (npm create convention) |
+| `npx create-sasswave-app` | Launch the CLI (npx) |
+| `npx create-sasswave-app my-app` | Skip the app name prompt |
+
+### After scaffolding
+
+```bash
+cd my-app
+npm run dev
+```
+
+---
+
+## 🔧 Custom Assets
+
+Assets are configured in `assets-manifest.json`. The CLI downloads them into your project during setup:
+
+```json
+[
+  {
+    "url": "https://example.com/logo.png",
+    "dest": "public/logo.png",
+    "frameworks": ["next", "react", "remix"],
+    "description": "Project logo"
+  }
+]
+```
+
+| Field | Description |
+|-------|-------------|
+| `url` | Remote URL to download from |
+| `dest` | Path inside the generated project |
+| `frameworks` | Which frameworks receive this asset (`next`, `react`, `remix`) |
+
+---
+
+## 📋 Requirements
+
+- **Node.js** >= 18.0.0
+- **npm** >= 7 (ships with Node 18+)
+
+---
+
+## 🛠️ Development
+
+```bash
+git clone https://github.com/shiv-am-saxena/Sasswave-CLI.git
+cd Sasswave-CLI
+npm install
+npm run dev     # Run the CLI locally
+npm test        # Run unit tests
+```
+
+---
+
+## 📝 Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for a list of changes in each release.
+
+Releases are automated with [semantic-release](https://github.com/semantic-release/semantic-release) — version bumps, changelogs, and npm publishes happen on every push to `main`.
+
+---
+
+## 🔗 Links
+
+- [SassWave Components](https://sasswave.in/components/)
+- [SassWave Documentation](https://sasswave.in/docs/)
+- [GitHub Repository](https://github.com/shiv-am-saxena/Sasswave-CLI)
+- [Report Issues](https://github.com/shiv-am-saxena/Sasswave-CLI/issues)
+
+---
+
+## License
+
+UNLICENSED
