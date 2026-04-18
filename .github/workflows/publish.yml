@@ -11,35 +11,30 @@ jobs:
     environment: npm
 
     permissions:
-      contents: write       # Push version bump commits + create GitHub releases
-      issues: write         # Comment on issues referenced in commits
-      pull-requests: write  # Comment on PRs referenced in commits
-      id-token: write       # npm OIDC provenance
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
       packages: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org
 
-      - name: Install dependencies
-        run: npm i
+      - run: npm ci
 
-      - name: Run unit tests
-        run: npm test
+      - run: npm test
 
-      - name: Run smoke tests
-        run: node scripts/smoke-test.js
+      - run: node scripts/smoke-test.js
 
-      - name: Release (version bump + changelog + npm publish + GitHub release)
+      - name: Release
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

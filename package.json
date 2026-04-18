@@ -1,5 +1,5 @@
 {
-  "name": "create-sasswave-app",
+  "name": "@sasswave/create-sasswave-app",
   "version": "0.1.1",
   "description": "Zero-config CLI to scaffold SassWave-ready React or Next.js apps. Run with: npm create sasswave-app",
   "private": false,
