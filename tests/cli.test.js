@@ -2,6 +2,7 @@ import { jest } from '@jest/globals';
 import nock from 'nock';
 import request from 'supertest';
 import { createServer } from 'http';
+import https from 'https';
 
 // We need to mock child_process.execSync
 jest.unstable_mockModule('child_process', () => ({
@@ -85,8 +86,13 @@ describe('CLI Tests using Jest, Nock, and Supertest', () => {
             .get('/repos/SassWave/create-sasswave-app')
             .reply(200, { name: 'create-sasswave-app' });
 
-        const res = await fetch('https://api.github.com/repos/SassWave/create-sasswave-app');
-        const data = await res.json();
+        const data = await new Promise((resolve, reject) => {
+            https.get('https://api.github.com/repos/SassWave/create-sasswave-app', (res) => {
+                let body = '';
+                res.on('data', chunk => body += chunk);
+                res.on('end', () => resolve(JSON.parse(body)));
+            }).on('error', reject);
+        });
 
         expect(data.name).toBe('create-sasswave-app');
     });
