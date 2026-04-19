@@ -39,14 +39,14 @@ describe('CLI Tests using Jest, Nock, and Supertest', () => {
     let scaffoldProject;
     let setupSass;
     let execSyncMock;
-    
+
     beforeAll(async () => {
         const cp = await import('child_process');
         execSyncMock = cp.execSync;
-        
+
         const scaffoldModule = await import('../src/scaffold.js');
         scaffoldProject = scaffoldModule.scaffoldProject;
-        
+
         const setupSassModule = await import('../src/setup/setupSass.js');
         setupSass = setupSassModule.setupSass;
     });
@@ -82,13 +82,13 @@ describe('CLI Tests using Jest, Nock, and Supertest', () => {
 
     it('demonstrates nock mocking an HTTP request', async () => {
         nock('https://api.github.com')
-            .get('/repos/shiv-am-saxena/Sasswave-CLI')
-            .reply(200, { name: 'Sasswave-CLI' });
+            .get('/repos/SassWave/create-sasswave-app')
+            .reply(200, { name: 'create-sasswave-app' });
 
-        const res = await fetch('https://api.github.com/repos/shiv-am-saxena/Sasswave-CLI');
+        const res = await fetch('https://api.github.com/repos/SassWave/create-sasswave-app');
         const data = await res.json();
-        
-        expect(data.name).toBe('Sasswave-CLI');
+
+        expect(data.name).toBe('create-sasswave-app');
     });
 
     it('demonstrates supertest with a dummy server', async () => {
