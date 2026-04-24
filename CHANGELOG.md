@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/SassWave/create-sasswave-app/compare/v1.0.0...v1.0.1) (2026-04-24)
+
+
+### Bug Fixes
+
+* update package name from create-sasswave-app to create-sasswave ([ee9fce0](https://github.com/SassWave/create-sasswave-app/commit/ee9fce0d6380f958f7830d62262d85cf7b0118b8))
+
 # 1.0.0 (2026-04-20)
 
 
